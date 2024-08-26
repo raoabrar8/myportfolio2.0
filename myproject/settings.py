@@ -123,10 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media root and urls
 
 MEDIA_URL = 'media/'
@@ -136,3 +138,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root/')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+if 'DYNO' in os.environ:  # This check determines if the app is running on Heroku
+    # Simplified static file serving using WhiteNoise
+    MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
+
+    # Ensure WhiteNoise finds your static files
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
