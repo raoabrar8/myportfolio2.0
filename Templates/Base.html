@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rao Abrar Nawaz{% endblock title %}</title>
+
+    <style>
+        .verify-link {
+            color: var(--vegas-gold);
+            /* Dark yellow color */
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .verify-link::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--vegas-gold);
+            transition: width 0.3s ease;
+        }
+
+        .verify-link:hover {
+            color: #FFA500;
+            /* Slightly lighter yellow on hover */
+            transform: translateY(-3px);
+            /* Slight lift on hover */
+        }
+
+        .verify-link:hover::before {
+            width: 100%;
+            /* Expands underline to full width on hover */
+        }
+
+        .verify-link:active {
+            transform: scale(0.95);
+
+
+        }
+    </style>
+    <!--
+    - favicon
+    -->
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+
+    <!--
+    - custom css link
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
+    <!--
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        {% block body %}
+        {% endblock body %}
+    </main>
+
+    <!--
+    - custom js link
+    -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!--
+    - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterButtons = document.querySelectorAll("[data-filter-btn]");
+            const projectItems = document.querySelectorAll("[data-filter-item]");
+
+            filterButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const category = button.getAttribute("data-category");
+
+                    // Remove the active class from all buttons
+                    filterButtons.forEach((btn) => btn.classList.remove("active"));
+
+                    // Add the active class to the clicked button
+                    button.classList.add("active");
+
+                    // Show or hide projects based on the selected category
+                    projectItems.forEach((item) => {
+                        if (category === "all" || item.getAttribute("data-category") === category) {
+                            item.classList.add("active");
+                        } else {
+                            item.classList.remove("active");
+                        }
+                    });
+                });
+            });
+
+            const selectItems = document.querySelectorAll("[data-select-item]");
+            const selectValue = document.querySelector("[data-selecct-value]");
+
+            selectItems.forEach((item) => {
+                item.addEventListener("click", () => {
+                    const category = item.getAttribute("data-category");
+
+                    // Update select value
+                    selectValue.textContent = item.textContent;
+
+                    // Simulate a click on the corresponding filter button
+                    document.querySelector(`[data-filter-btn][data-category="${category}"]`).click();
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
