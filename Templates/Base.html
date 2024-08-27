@@ -53,21 +53,39 @@
         @media (max-width: 768px) {
             .verify-link {
                 font-size: 0.9rem;
-                /* Slightly smaller font size on tablets */
+                /* Slightly smaller font size */
                 margin-top: 8px;
-                /* Adjust margin for smaller screens */
+                /* Adjust margin */
+                padding: 5px 0;
+                /* Add padding for touch-friendly interaction */
             }
         }
 
+        /* Mobile View */
         @media (max-width: 480px) {
             .verify-link {
                 font-size: 0.8rem;
-                /* Smaller font size on mobile devices */
+                /* Smaller font size for mobile devices */
                 margin-top: 6px;
-                /* Adjust margin for smaller screens */
+                /* Adjust margin */
+                padding: 8px 0;
+                /* Increase padding for easier tap interaction */
+                line-height: 1.4;
+                /* Adjust line height for better readability on small screens */
+                text-align: center;
+                /* Center align for better visual appeal on narrow screens */
+            }
+
+            .verify-link:hover {
+                transform: none;
+                /* Disable transform on hover for mobile to avoid accidental touch movements */
+            }
+
+            .verify-link::before {
+                height: 1px;
+                /* Thinner underline to suit smaller text */
             }
         }
-
 
         /*-----------------------------------*\
   #style.css
