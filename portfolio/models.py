@@ -63,7 +63,7 @@ class AboutModel(models.Model):
 
 
 class JobModel(models.Model):
-    job_logo = models.ImageField(upload_to='job_logo/')
+    job_logo = models.CharField(max_length=50, default=None)
     title = models.CharField(max_length=100)
     description= models.TextField()
 
