@@ -50,6 +50,24 @@
 
         }
 
+        @media (max-width: 768px) {
+            .verify-link {
+                font-size: 0.9rem;
+                /* Slightly smaller font size on tablets */
+                margin-top: 8px;
+                /* Adjust margin for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .verify-link {
+                font-size: 0.8rem;
+                /* Smaller font size on mobile devices */
+                margin-top: 6px;
+                /* Adjust margin for smaller screens */
+            }
+        }
+
 
         /*-----------------------------------*\
   #style.css
@@ -3008,6 +3026,12 @@ download Button */
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <script>
+
+
+
+
+
+        ////////other main files////
         document.addEventListener("DOMContentLoaded", function () {
             const filterButtons = document.querySelectorAll("[data-filter-btn]");
             const projectItems = document.querySelectorAll("[data-filter-item]");
