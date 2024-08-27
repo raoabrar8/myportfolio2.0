@@ -368,7 +368,8 @@
           <td>{{fskill.expertise | capfirst}}</td>
           <td>
             <div class="extra-skill-progress-bg">
-              <div class="extra-skill-progress-fill" style="width: {{fskill.level}}%;">
+              <div class="extra-skill-progress-fill" data-percentage="{{fskill.level}}"
+                style="width: {{fskill.level}}%;">
                 <span><strong>{{fskill.level}}%</strong></span>
               </div>
             </div>
@@ -391,7 +392,7 @@
 
 
         <tr>
-          <td><i class="{{fskill.icon}}"></i>{{bskill.language | capfirst}}</td>
+          <td><i class="{{bskill.icon}}"></i>{{bskill.language | capfirst}}</td>
           <td>{{bskill.expertise | capfirst}}</td>
           <td>
             <div class="extra-skill-progress-bg">
@@ -418,7 +419,7 @@
 
 
         <tr>
-          <td><i class="{{fskill.icon}}"></i>{{ai.language | capfirst}}</td>
+          <td><i class="{{ai.icon}}"></i>{{ai.language | capfirst}}</td>
           <td>{{ai.expertise | capfirst}}</td>
           <td>
             <div class="extra-skill-progress-bg">

@@ -58,6 +58,10 @@
                 /* Adjust margin */
                 padding: 5px 0;
                 /* Add padding for touch-friendly interaction */
+                flex: 1;
+                /* Allow the link to take up available space */
+                text-align: center;
+                /* Center align for better visual appeal */
             }
         }
 
@@ -71,14 +75,16 @@
                 padding: 8px 0;
                 /* Increase padding for easier tap interaction */
                 line-height: 1.4;
-                /* Adjust line height for better readability on small screens */
+                /* Adjust line height for better readability */
                 text-align: center;
-                /* Center align for better visual appeal on narrow screens */
+                /* Center align for better visual appeal */
+                flex: 1;
+                /* Ensure it takes up available space in a flex container */
             }
 
             .verify-link:hover {
                 transform: none;
-                /* Disable transform on hover for mobile to avoid accidental touch movements */
+                /* Disable transform on hover for mobile */
             }
 
             .verify-link::before {
@@ -1495,6 +1501,7 @@ download Button */
 
 
         /* Extra Skill Section */
+        /* Extra Skill Section */
         .extra-skill {
             margin-top: 30px;
             opacity: 0;
@@ -1531,28 +1538,20 @@ download Button */
             height: 8px;
             border-radius: 10px;
             overflow: hidden;
+            position: relative;
         }
-
-
 
         .extra-skill-progress-fill {
             background: var(--text-gradient-yellow);
             height: 100%;
-            width: 100%;
+            width: 0;
+            /* Initial width set to 0, will be adjusted dynamically */
             border-radius: inherit;
-            position: relative;
-            animation: fillProgress 1s ease-out forwards;
-            animation-delay: 1.2s;
-            transform: scaleX(0);
-            /* Initial scale to 0 */
+            position: absolute;
             transform-origin: left;
-            /* Animation will grow from the left */
-            animation: growBar 2s ease-out forwards;
-            /* Animation on load */
+            transition: width 1s ease-out;
+            /* Smooth transition */
         }
-
-
-
 
         .extra-skill-progress-fill span {
             position: absolute;
@@ -1561,14 +1560,7 @@ download Button */
             transform: translateY(-50%);
             color: var(--jet);
             font-size: 8px;
-            color: var(--jet);
             font-weight: var(--fw-400);
-        }
-
-
-        .skills-table i {
-            margin-right: 8px;
-            font-size: 0.9em;
         }
 
         /* Responsive adjustments */
@@ -1594,13 +1586,19 @@ download Button */
             }
 
             .extra-skill-progress-fill span {
-                font-size: 6px;
+                font-size: 5px;
             }
 
             .skills-table i {
-                font-size: 0.8em;
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
             }
         }
+
 
         /*-----------------------------------*\
 #PORTFOLIO
@@ -2126,6 +2124,25 @@ download Button */
                 height: auto;
             }
 
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
+            }
+
 
         }
 
@@ -2153,6 +2170,25 @@ download Button */
             .project-img,
             .blog-banner-box {
                 height: auto;
+            }
+
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
             }
 
         }
@@ -2183,6 +2219,25 @@ download Button */
                 height: auto;
             }
 
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
+            }
+
         }
 
 
@@ -2192,6 +2247,24 @@ download Button */
             /**
  * client
  */
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
+            }
 
             .clients-item {
                 min-width: calc(33.33% - 10px);
@@ -2208,6 +2281,25 @@ download Button */
             .project-img,
             .blog-banner-box {
                 height: auto;
+            }
+
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
             }
 
         }
@@ -2242,6 +2334,24 @@ download Button */
                 height: auto;
             }
 
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 5px;
+            }
+
+            .skills-table i {
+                font-size: 0.5em;
+            }
+
+            .extra-skill-progress-bg {
+                height: 6px;
+                /* Adjust height for mobile */
+            }
         }
 
 
@@ -3043,10 +3153,19 @@ download Button */
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressFills = document.querySelectorAll('.extra-skill-progress-fill');
 
+            progressFills.forEach(fill => {
+                const percentage = fill.getAttribute('data-percentage'); // Ensure you set data-percentage attribute in HTML
+                fill.style.width = percentage + '%';
+            });
+        });
 
-
+    </script>
+    <script>
 
 
         ////////other main files////
