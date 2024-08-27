@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media root and urls
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root/')
 
 # Default primary key field type
@@ -141,12 +141,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-if 'DYNO' in os.environ:  # This check determines if the app is running on Heroku
-    # Simplified static file serving using WhiteNoise
-    MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
+# if 'DYNO' in os.environ:  # This check determines if the app is running on Heroku
+#     # Simplified static file serving using WhiteNoise
+#     MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
 
-    # Ensure WhiteNoise finds your static files
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#     # Ensure WhiteNoise finds your static files
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
