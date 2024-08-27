@@ -1501,7 +1501,6 @@ download Button */
 
 
         /* Extra Skill Section */
-        /* Extra Skill Section */
         .extra-skill {
             margin-top: 30px;
             opacity: 0;
@@ -1538,20 +1537,28 @@ download Button */
             height: 8px;
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
         }
+
+
 
         .extra-skill-progress-fill {
             background: var(--text-gradient-yellow);
             height: 100%;
-            width: 0;
-            /* Initial width set to 0, will be adjusted dynamically */
+            width: 100%;
             border-radius: inherit;
-            position: absolute;
+            position: relative;
+            animation: fillProgress 1s ease-out forwards;
+            animation-delay: 1.2s;
+            transform: scaleX(0);
+            /* Initial scale to 0 */
             transform-origin: left;
-            transition: width 1s ease-out;
-            /* Smooth transition */
+            /* Animation will grow from the left */
+            animation: growBar 2s ease-out forwards;
+            /* Animation on load */
         }
+
+
+
 
         .extra-skill-progress-fill span {
             position: absolute;
@@ -1560,7 +1567,14 @@ download Button */
             transform: translateY(-50%);
             color: var(--jet);
             font-size: 8px;
+            color: var(--jet);
             font-weight: var(--fw-400);
+        }
+
+
+        .skills-table i {
+            margin-right: 8px;
+            font-size: 0.9em;
         }
 
         /* Responsive adjustments */
@@ -1586,19 +1600,13 @@ download Button */
             }
 
             .extra-skill-progress-fill span {
-                font-size: 5px;
+                font-size: 6px;
             }
 
             .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
+                font-size: 0.8em;
             }
         }
-
 
         /*-----------------------------------*\
 #PORTFOLIO
@@ -2124,25 +2132,6 @@ download Button */
                 height: auto;
             }
 
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
-            }
-
 
         }
 
@@ -2170,25 +2159,6 @@ download Button */
             .project-img,
             .blog-banner-box {
                 height: auto;
-            }
-
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
             }
 
         }
@@ -2219,25 +2189,6 @@ download Button */
                 height: auto;
             }
 
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
-            }
-
         }
 
 
@@ -2247,24 +2198,6 @@ download Button */
             /**
  * client
  */
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
-            }
 
             .clients-item {
                 min-width: calc(33.33% - 10px);
@@ -2281,25 +2214,6 @@ download Button */
             .project-img,
             .blog-banner-box {
                 height: auto;
-            }
-
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
             }
 
         }
@@ -2334,24 +2248,6 @@ download Button */
                 height: auto;
             }
 
-            .skills-table th,
-            .skills-table td {
-                padding: 6px 10px;
-                font-size: 0.8em;
-            }
-
-            .extra-skill-progress-fill span {
-                font-size: 5px;
-            }
-
-            .skills-table i {
-                font-size: 0.5em;
-            }
-
-            .extra-skill-progress-bg {
-                height: 6px;
-                /* Adjust height for mobile */
-            }
         }
 
 
@@ -3153,18 +3049,6 @@ download Button */
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const progressFills = document.querySelectorAll('.extra-skill-progress-fill');
-
-            progressFills.forEach(fill => {
-                const percentage = fill.getAttribute('data-percentage'); // Ensure you set data-percentage attribute in HTML
-                fill.style.width = percentage + '%';
-            });
-        });
-
-    </script>
     <script>
 
 
