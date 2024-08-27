@@ -489,21 +489,27 @@
             }
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .avatar-box {
-                width: 120px;
-                height: 120px;
+                width: 20vw;
+                /* Scales down on smaller screens */
+                height: 20vw;
+                max-width: 120px;
+                /* Adjust max size for smaller screens */
+                max-height: 120px;
             }
         }
 
         @media (max-width: 480px) {
             .avatar-box {
-                width: 60px;
-                height: 60px;
+                width: 25vw;
+                /* Further scales down on very small screens */
+                height: 25vw;
+                max-width: 80px;
+                /* Further adjust max size for small screens */
+                max-height: 80px;
             }
         }
-
 
 
         /* --- */
@@ -1529,6 +1535,36 @@ download Button */
             font-size: 0.9em;
         }
 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            .skills-table th,
+            .skills-table td {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 7px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .skills-table th,
+            .skills-table td {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .extra-skill-progress-fill span {
+                font-size: 6px;
+            }
+
+            .skills-table i {
+                font-size: 0.8em;
+            }
+        }
 
         /*-----------------------------------*\
 #PORTFOLIO
